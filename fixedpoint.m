@@ -17,16 +17,18 @@
 function retval = fixedpoint(g, p0, tol, nMax)
     i = 1;
     while (i <= nMax)
-        printf("ITERATION %d\n", i);
-        p = g(p0)
-        err = abs(p-p0)
+        printf("\nITERATION %d\n", i);
+        printf("p0 = %f\n", p0);
+        p = g(p0);
+        err = abs(p-p0);
+        printf("p = %f\nerr = %f\n", p, err);
         if (err < tol)
             retval = p;
+            printf("\nans = %f\n\n", retval);
             return;
         endif
         i++;
-        p0 = p
-        printf("\n");
+        p0 = p;
     endwhile
     error("ERROR: method failed after %d iterations\n", i);
 endfunction

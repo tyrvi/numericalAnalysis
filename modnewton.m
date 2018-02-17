@@ -1,6 +1,6 @@
 % Thais Minet
 % 2/10/18
-% Lab 4 - Newton's method & secant method
+% Modified Newton's method
 %
 % Usage: newton(2, f, fprime, 10.^(-4), 100)
 %
@@ -8,6 +8,7 @@
 % - p0 is the initial approximation
 % - f is the function which we are trying to find the root of
 % - fprime is the derivative of f
+% - f2prime is the second derivative of f
 % - tol is the error tolerance for the result
 % - nMax is the maximum number of iterations
 %
@@ -15,22 +16,22 @@
 % - retval is the result of the approximation
 
 
-function retval = newton(p0, f, fprime, tol, nMax)
-    i = 1;
+function retval = modnewton(p0, f, fprime, f2prime, tol, nMax)
+    i = 0;
     p = 0;
-    while (i <= nMax)
-        printf("\nITERATION %d\n", i);
-        printf("p0 = %.20f\n", p0);
-        p = p0 - f(p0) ./ fprime(p0);
+    while (i < nMax)
+        printf("ITERATION %d\n", i);
+        p = p0 - (f(p0) * fprime(p0)) ./ ((fprime(p0)).^2 - f(p0)*f2prime(p0));
         err = abs(p - p0);
-        printf("p = %.20f\nerr = %.20f\n", p, err);
+        printf("p = %f\nerr = %f\n", p, err);
         if (err < tol)
             retval = p;
-            printf("\nans = %.20f\n\n", retval);
+            printf("\nans = %f\n\n", retval);
             return;
         endif
         i++;
         p0 = p;
+        printf("p0 = %f\n\n", p0);
     endwhile
     error("ERROR: method failed after %d iterations\n". i);    
 endfunction

@@ -38,5 +38,5 @@ function retval = secant(p0, p1, f, tol, nMax)
         p1 = p;
         q1 = f(p);
     endwhile
-    error("ERROR: method failed after %d iterations\n". i);    
+    error("ERROR: method failed after %d iterations\n", i);    
 endfunction
