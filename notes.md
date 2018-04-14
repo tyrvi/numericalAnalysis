@@ -12,3 +12,7 @@ Midterm Exam
 
 1. 10 multiple choice questions --> 15 points
 2. one problem (programming logic) --> 25 points (takehome)
+
+## Wednesday 2/21/18
+Lab 9
+Use the Romberg integration and adaptive quadrature algorithms

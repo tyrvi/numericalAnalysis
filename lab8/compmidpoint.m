@@ -4,7 +4,7 @@ function retval = compmidpoint(a, b, f, n)
 
     printf("h = %.10f\n", h);
     for j = 0:(n/2)
-        % printf("j = %d | 2*j = %d\nXj = %.10f\n", j, 2*j, a + (2*j+1)*h);
+        printf("j = %d | 2*j = %d\nXj = %.10f\n", j, 2*j, a + (2*j+1)*h);
         sum += f(a + (2*j+1)*h);
     endfor
 

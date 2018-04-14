@@ -1,9 +1,10 @@
-from math import sin, e
+from math import sin, cos, e, pi, pow
 
 def simpsons_rule(f, a, b):
     c = (a+b) / 2.000
     h3 = abs(b-a) / 6.0
     print("S(%0.10f, %0.10f) = %0.10f" % (a, b, h3*(f(a) + 4.0*f(c) + f(b))))
+    #print("h3 = %0.10f" % h3)
     return h3*(f(a) + 4.0*f(c) + f(b))
 
 def recursive_asr(f, a, b, eps, whole, l):
@@ -22,6 +23,9 @@ def adaptive_simpsons_rule(f, a, b, eps):
 
 
 def main():
-    print(adaptive_simpsons_rule(lambda x: (e**(2*x))*sin(3*x), 1, 3, 1e-5))
+    # print(adaptive_simpsons_rule(lambda x: (e**(2*x))*sin(3*x), 1, 3, 1e-5))
+    # f = lambda x: (sin(x) + cos(x))
+    f = lambda x: pow(x, 2) * pow(e, -x)
+    print(adaptive_simpsons_rule(f, 0, 1, pow(10, -3)))
 
 main()
