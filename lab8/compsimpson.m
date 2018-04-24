@@ -7,8 +7,14 @@ function retval = compsimpson(a, b, f, n)
 
     for j = 1:n-1
         if (mod(j, 2) == 0)
+            printf("Even: a + j*h = %.5f + %d * %.5f = %.15f\n", a, j, h, a+j*h);
+            printf("f(a + j*h) = %.15f\n\n", f(a+j*h));
+            
             even += f(a+j*h);
         else
+            printf("Odd: a + j*h = %.5f + %d * %.5f = %.15f\n", a, j, h, a+j*h);
+            printf("f(a + j*h) = %.15f\n\n", f(a+j*h));
+            
             odd += f(a+j*h);
         endif
     endfor
