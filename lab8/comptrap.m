@@ -1,6 +1,9 @@
-function retval = comptrap(a, b, f, n)
+function retval = comptrap(a, b, f, h)
     mid = 0;
-    h = (b-a)/n;
+
+    # h = (b-a)/n;
+
+    n = (b-a)/h;
     printf("h = %.10f\n", h);
     for j = 1:n-1
         mid += f(a+j*h);

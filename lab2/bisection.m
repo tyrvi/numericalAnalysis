@@ -1,4 +1,5 @@
-% Thais Minet
+
+          % Thais Minet
 % 1/29/18
 % Lab 2 - Bisection Algorithm
 %

@@ -1,5 +1,7 @@
-function retval = compsimpson(a, b, f, n)
-    h = (b-a)/n;
+function retval = compsimpson(a, b, f, h)
+    # h = (b-a)/n;
+
+    n = (b-a)/h;
     printf("h = %.10f\n", h);
     
     even = 0;

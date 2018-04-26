@@ -19,17 +19,17 @@ function retval = bisection2(f, a, b, tol, nMax)
     n = 1;
     while (n <= nMax)
         printf("iteration %d\n", n);
-        printf("[a, b] = [%f, %f]\n", a, b);
+        printf("[a, b] = [%.15f, %.15f]\n", a, b);
         c = a + (b - a) ./ 2;
-        printf("c = %f\n", c);
+        printf("c = %.15f\n", c);
         err = (b - a) ./ 2;
-        printf("f(c) = %f err = %f\n", f(c), err);
+        printf("f(c) = %.15f err = %.15f\n", f(c), err);
         if (f(c) == 0 | err < tol)
-            printf("retval = %f\n", c);
+            printf("retval = %.15f\n", c);
             retval = c;
             return;
         endif
-        printf("f(a)*f(c) = %f\n", f(c).*f(a));
+        printf("f(a)*f(c) = %.15f\n", f(c).*f(a));
         if (f(c) .* f(a) > 0)
             a = c
         else

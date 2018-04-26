@@ -1,5 +1,7 @@
-function retval = compmidpoint(a, b, f, n)
-    h = (b-a)/(n+2);
+function retval = compmidpoint(a, b, f, h)
+    # h = (b-a)/(n+2);
+
+    n = (b-a)/h - 2;
     sum = 0;
 
     printf("h = %.10f\n", h);
